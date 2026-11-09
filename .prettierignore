@@ -1,0 +1,7 @@
+node_modules
+.expo
+.build
+.agents/skills
+package-lock.json
+assets
+docs/references

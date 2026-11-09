@@ -1,0 +1,12 @@
+# Fill in real GitHub usernames with repository access before enabling required reviews.
+# Rules are intentionally commented out: no owner/review enforcement is active yet.
+# /src/theme/ @UI_OWNER
+# /src/components/ @UI_OWNER
+# /src/app/*layout.tsx @UI_OWNER
+# /src/app/(tabs)/_layout.tsx @UI_OWNER
+# /src/contracts/ @BACKEND_OWNER
+# /src/services/ @BACKEND_OWNER
+# /.github/ @TEAM_LEAD
+# /.agents/ @TEAM_LEAD
+# /package.json @TEAM_LEAD
+# /package-lock.json @TEAM_LEAD
