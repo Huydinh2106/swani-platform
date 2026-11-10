@@ -53,16 +53,17 @@ Sau khi đổi navigator, **Reload toàn bộ app trong Expo Go**; Fast Refresh 
 
 ## Chức năng hiện tại
 
-| Phần                              | Trạng thái                                                    |
-| --------------------------------- | ------------------------------------------------------------- |
-| Khám phá                          | Home, category, grid sản phẩm và brand mẫu                    |
-| Tìm kiếm                          | Không dấu, tên/brand/tag, category, đến 500k, giá tăng dần    |
-| Chi tiết                          | Vector artwork, mô tả, chọn size mẫu, lưu, thông tin cửa hàng |
-| Đã lưu/theo dõi                   | AsyncStorage local, chưa đồng bộ tài khoản                    |
-| Cửa hàng                          | Danh sách, link tọa độ mẫu; chưa GPS/bản đồ nhúng             |
-| Cá nhân/brand/gallery             | Màn mẫu và đối chiếu shared components                        |
-| Auth/database/Instagram/AI import | Chưa tích hợp                                                 |
-| Web quản trị                      | [Thư mục dành sẵn](brand-admin/README.md), chưa có app        |
+| Phần                              | Trạng thái                                                      |
+| --------------------------------- | --------------------------------------------------------------- |
+| Khám phá                          | Home, category, grid sản phẩm và brand mẫu                      |
+| Tìm kiếm                          | Không dấu, tên/brand/tag, category, đến 500k, giá tăng dần      |
+| Chi tiết                          | Vector artwork, mô tả, chọn size mẫu, lưu, thông tin cửa hàng   |
+| Thông báo                         | Màn giữ chỗ; chưa có chức năng thông báo                        |
+| Đã lưu/theo dõi                   | Lưu/bỏ lưu sản phẩm bằng AsyncStorage; trang đã lưu chưa có tab |
+| Cửa hàng                          | Danh sách, link tọa độ mẫu; chưa GPS/bản đồ nhúng               |
+| Cá nhân/brand/gallery             | Màn mẫu và đối chiếu shared components                          |
+| Auth/database/Instagram/AI import | Chưa tích hợp                                                   |
+| Web quản trị                      | [Thư mục dành sẵn](brand-admin/README.md), chưa có app          |
 
 Brand/sản phẩm/địa điểm/minh họa đều là demo. Tọa độ ở Hà Nội không phải địa chỉ cửa hàng đã xác minh; chưa có tồn kho, giỏ hàng hay thanh toán.
 

@@ -19,9 +19,12 @@ export function AppTabs() {
         />
         <NativeTabs.Trigger.Label>Cửa hàng</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="saved">
-        <NativeTabs.Trigger.Icon sf={{ default: 'heart', selected: 'heart.fill' }} md="favorite" />
-        <NativeTabs.Trigger.Label>Đã lưu</NativeTabs.Trigger.Label>
+      <NativeTabs.Trigger name="notifications">
+        <NativeTabs.Trigger.Icon
+          sf={{ default: 'bell', selected: 'bell.fill' }}
+          md="notifications"
+        />
+        <NativeTabs.Trigger.Label>Thông báo</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
         <NativeTabs.Trigger.Icon

@@ -16,6 +16,7 @@ const paths = {
   grid: '',
   share: 'M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7',
   close: 'm6 6 12 12M6 18 18 6',
+  bell: 'M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4',
   bag: 'M5 7h14l1 14H4ZM9 8V6a3 3 0 0 1 6 0v2',
 } as const;
 export type IconName = keyof typeof paths;

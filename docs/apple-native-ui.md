@@ -18,7 +18,7 @@
 
 ## Thanh tab phải là native
 
-Mobile dùng [app-tabs.tsx](../src/components/navigation/app-tabs.tsx), web dùng [app-tabs.web.tsx](../src/components/navigation/app-tabs.web.tsx); route [layout](<../src/app/(tabs)/_layout.tsx>) chỉ nhập component. Giữ tên/thứ tự tab hiện tại: `index`, `stores`, `saved`, `profile`, trừ khi task yêu cầu đổi navigation. Search nằm ở root stack với URL `/search`, mở từ ô tìm kiếm đầu trang chủ; không còn là tab. Chuyển trang bằng native stack, giữ back gesture của hệ thống.
+Mobile dùng [app-tabs.tsx](../src/components/navigation/app-tabs.tsx), web dùng [app-tabs.web.tsx](../src/components/navigation/app-tabs.web.tsx); route [layout](<../src/app/(tabs)/_layout.tsx>) chỉ nhập component. Các tab hiện tại: `index`, `stores`, `notifications`, `profile`. Search nằm ở root stack với URL `/search`, mở từ ô tìm kiếm đầu trang chủ; không còn là tab. Chuyển trang bằng native stack, giữ back gesture của hệ thống.
 
 Trên SDK 58, cú pháp là `NativeTabs.Trigger` cùng `.Icon`/`.Label`. Import `unstable-native-tabs` thuộc SDK cũ, không sao chép vào app hiện tại theo trí nhớ. Native tab tự nhận Liquid Glass trên iOS 26+; không cần bọc `GlassView`. [API SDK 58](https://docs.expo.dev/versions/v58.0.0/sdk/router/native-tabs/), [hướng dẫn](https://docs.expo.dev/router/advanced/native-tabs/).
 

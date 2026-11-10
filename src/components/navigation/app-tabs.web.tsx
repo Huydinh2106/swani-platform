@@ -7,7 +7,7 @@ import { colors, radius, size, spacing, type } from '@/theme';
 const tabs: { name: string; title: string; icon: IconName }[] = [
   { name: 'index', title: 'Khám phá', icon: 'home' },
   { name: 'stores', title: 'Cửa hàng', icon: 'pin' },
-  { name: 'saved', title: 'Đã lưu', icon: 'heart' },
+  { name: 'notifications', title: 'Thông báo', icon: 'bell' },
   { name: 'profile', title: 'Cá nhân', icon: 'user' },
 ];
 // Web preview only. Mobile resolves app-tabs.tsx and uses the system tab bar.
