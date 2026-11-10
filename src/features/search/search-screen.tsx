@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import type { Category } from '@/contracts/catalog';
@@ -8,29 +8,33 @@ import { AppText } from '@/components/ui/app-text';
 import { Chip } from '@/components/ui/chip';
 import { Button } from '@/components/ui/button';
 import { SearchInput } from '@/components/ui/search-input';
+import { IconButton } from '@/components/ui/icon-button';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProductGrid } from '@/components/domain/product-grid';
 import { CatalogFeedback } from '@/components/domain/catalog-feedback';
 import { categories } from '@/fixtures/catalog';
 import { useBrands, useProducts } from '@/hooks/use-catalog';
-import { spacing } from '@/theme';
+import { size, spacing } from '@/theme';
 export function SearchScreen() {
-  const params = useLocalSearchParams<{ q?: string; category?: string }>();
+  const params = useLocalSearchParams<{ q?: string; category?: string; focus?: string }>();
   const initialCategory = categories.find((item) => item.value === params.category)?.value;
   return (
     <SearchContent
       key={JSON.stringify([params.q, params.category])}
       initialQuery={params.q ?? ''}
       initialCategory={initialCategory}
+      autoFocus={params.focus === 'true'}
     />
   );
 }
 function SearchContent({
   initialQuery,
   initialCategory,
+  autoFocus,
 }: {
   initialQuery: string;
   initialCategory?: Category;
+  autoFocus: boolean;
 }) {
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState<Category | undefined>(initialCategory);
@@ -51,12 +55,18 @@ function SearchContent({
   }
   return (
     <Screen scroll={false}>
+      <View style={styles.toolbar}>
+        <View style={styles.search}>
+          <SearchInput value={query} onChangeText={setQuery} autoFocus={autoFocus} />
+        </View>
+        <IconButton
+          name="close"
+          label="Quay lại"
+          diameter={size.search}
+          onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+        />
+      </View>
       <PageHeader title="Tìm đúng gu" subtitle="Những local brand bạn sắp yêu thích." />
-      <SearchInput
-        value={query}
-        onChangeText={setQuery}
-        placeholder="Thử “sơ mi”, “linen”, “Nếp”…"
-      />
       <View style={styles.chips}>
         <Chip label="Tất cả" selected={!category} onPress={() => setCategory(undefined)} />
         {categories.map((item) => (
@@ -102,6 +112,8 @@ function SearchContent({
   );
 }
 const styles = StyleSheet.create({
+  toolbar: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  search: { flex: 1, minWidth: 0 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   summary: {
     flexDirection: 'row',

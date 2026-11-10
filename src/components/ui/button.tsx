@@ -9,6 +9,7 @@ import {
 import { colors, opacity, radius, size, spacing } from '@/theme';
 import { AppText } from './app-text';
 import { Icon, type IconName } from './icon';
+import { GlassSurface } from './glass-surface';
 
 type Props = {
   title: string;
@@ -29,7 +30,7 @@ export function Button({
   style,
 }: Props) {
   const foreground = variant === 'primary' ? colors.onPrimary : colors.primary;
-  return (
+  const button = (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={title}
@@ -40,7 +41,7 @@ export function Button({
         styles.base,
         styles[variant],
         { opacity: disabled ? opacity.disabled : pressed ? opacity.pressed : opacity.full },
-        style,
+        variant !== 'secondary' && style,
       ]}
     >
       {loading ? (
@@ -55,6 +56,13 @@ export function Button({
       )}
     </Pressable>
   );
+  return variant === 'secondary' ? (
+    <GlassSurface interactive={!disabled && !loading} style={[styles.secondary, style]}>
+      {button}
+    </GlassSurface>
+  ) : (
+    button
+  );
 }
 const styles = StyleSheet.create({
   base: {
@@ -68,6 +76,6 @@ const styles = StyleSheet.create({
   },
   content: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   primary: { backgroundColor: colors.primary },
-  secondary: { backgroundColor: colors.subtle },
+  secondary: { borderRadius: radius.md },
   ghost: { backgroundColor: colors.transparent },
 });

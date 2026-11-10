@@ -1,11 +1,10 @@
 # Đóng góp
 
-Đọc [cách làm việc của nhóm](docs/team-workflow.md), [hệ giao diện](docs/design-system.md) và task được giao.
+Mọi thay đổi dùng chung [AGENTS.md](AGENTS.md), [hệ giao diện](docs/design-system.md), [skill UI](.agents/skills/expo-design-system/SKILL.md) và [quy trình nhóm](docs/team-workflow.md). Hướng thiết kế đã chốt là Apple-native iOS 26+ với Liquid Glass.
 
-1. Cập nhật main, tạo branch tính năng riêng.
-2. Hoàn thiện một thay đổi nhỏ, chạy `npm run check`.
-3. Tạo PR theo template, kèm ảnh nếu thay đổi giao diện.
-4. Nhờ người phụ trách review shared code. Tự thử sản phẩm do AI viết trước khi yêu cầu merge.
-5. Merge qua GitHub, đồng bộ main với các nhánh còn lại.
+1. Đọc task và diff hiện tại; giữ thay đổi người khác. Dùng branch tính năng khi công việc Git được giao, không tự reset hoặc chuyển checkout đang dùng.
+2. Dùng shared token/component, native navigation và [quy tắc material](docs/apple-native-ui.md). Phối hợp người phụ trách khi thay shared code/contract.
+3. Chạy `npm run check`; export khi thay navigation/assets/dependencies. Với UI, dùng [kiểm tra native](docs/native-ui-validation.md), ghi thiết bị và bằng chứng phù hợp hành vi.
+4. Bàn giao thay đổi cụ thể. Khi được yêu cầu mở PR, dùng [template](.github/pull_request_template.md), nêu trước/sau và giới hạn; không tự push, publish hay merge.
 
-Repo hiện chưa có danh sách GitHub handle. Điền `.github/CODEOWNERS` và cấu hình branch protection sau khi tạo repository. Tránh push thẳng main sau lần push khởi tạo.
+`.github/CODEOWNERS` hiện chỉ là ví dụ comment. Điền handle thật và cấu hình review/branch protection khi chủ repository giao việc; không coi chúng là cơ chế đang có hiệu lực.

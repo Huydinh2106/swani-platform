@@ -1,33 +1,39 @@
 import { Pressable, StyleSheet } from 'react-native';
 import { colors, opacity, radius, size } from '@/theme';
 import { Icon, type IconName } from './icon';
+import { GlassSurface } from './glass-surface';
 export function IconButton({
   name,
   label,
   onPress,
   selected = false,
   disabled = false,
+  diameter = size.touch,
 }: {
   name: IconName;
   label: string;
   onPress(): void;
   selected?: boolean;
   disabled?: boolean;
+  diameter?: number;
 }) {
   return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={label}
-      accessibilityState={{ selected, disabled }}
-      disabled={disabled}
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.base,
-        { opacity: disabled ? opacity.disabled : pressed ? opacity.pressed : opacity.full },
-      ]}
-    >
-      <Icon name={name} color={colors.primary} filled={selected} />
-    </Pressable>
+    <GlassSurface interactive={!disabled}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={label}
+        accessibilityState={{ selected, disabled }}
+        disabled={disabled}
+        onPress={onPress}
+        style={({ pressed }) => [
+          styles.base,
+          { width: diameter, height: diameter },
+          { opacity: disabled ? opacity.disabled : pressed ? opacity.pressed : opacity.full },
+        ]}
+      >
+        <Icon name={name} color={colors.primary} filled={selected} />
+      </Pressable>
+    </GlassSurface>
   );
 }
 const styles = StyleSheet.create({
@@ -36,7 +42,6 @@ const styles = StyleSheet.create({
     minHeight: size.touch,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.surface,
     borderRadius: radius.pill,
   },
 });

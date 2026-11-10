@@ -1,12 +1,11 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Screen } from '@/components/ui/screen';
 import { AppText } from '@/components/ui/app-text';
 import { Button } from '@/components/ui/button';
 import { Chip } from '@/components/ui/chip';
 import { Icon } from '@/components/ui/icon';
-import { SearchInput } from '@/components/ui/search-input';
+import { SearchEntry } from '@/components/ui/search-input';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { ProductArtwork } from '@/components/domain/product-artwork';
 import { ProductGrid } from '@/components/domain/product-grid';
@@ -16,14 +15,13 @@ import { useBrands, useProducts } from '@/hooks/use-catalog';
 import { categories } from '@/fixtures/catalog';
 import { colors, radius, size, spacing } from '@/theme';
 export function HomeScreen() {
-  const [query, setQuery] = useState('');
   const products = useProducts();
   const brands = useBrands();
-  function search() {
-    router.push({ pathname: '/search', params: { q: query } });
-  }
   return (
     <Screen>
+      <SearchEntry
+        onPress={() => router.push({ pathname: '/search', params: { focus: 'true' } })}
+      />
       <View style={styles.top}>
         <View style={styles.location}>
           <Icon name="pin" size={size.iconSm} />
@@ -44,10 +42,6 @@ export function HomeScreen() {
         </AppText>
         <AppText variant="display">Gu của bạn.{'\n'}Brand quanh bạn.</AppText>
         <AppText tone="muted">Khám phá những món đồ có cá tính riêng.</AppText>
-      </View>
-      <View style={styles.search}>
-        <SearchInput value={query} onChangeText={setQuery} onSubmit={search} />
-        {query ? <Button title="Tìm sản phẩm" onPress={search} icon="search" /> : null}
       </View>
       <View style={styles.hero}>
         <View style={styles.heroCopy}>
@@ -126,7 +120,6 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
   },
   intro: { gap: spacing.sm },
-  search: { gap: spacing.sm },
   hero: {
     backgroundColor: colors.primary,
     borderRadius: radius.xl,
@@ -135,7 +128,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.md,
-    overflow: 'hidden',
   },
   heroCopy: { flex: 1.4, gap: spacing.lg },
   heroArt: {

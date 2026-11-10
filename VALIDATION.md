@@ -1,5 +1,7 @@
 # Kiểm tra starter — 09/11/2026
 
+Báo cáo lịch sử tại thời điểm starter, không phải quy tắc thiết kế hoặc kết quả hiện tại. Hướng Apple-native đã được chốt tại [design-system](docs/design-system.md); kiểm tra iPhone/Liquid Glass mới hơn ở [liquid-glass-validation](docs/liquid-glass-validation.md).
+
 ## Đã chạy và đạt
 
 - Cài sạch từ lockfile: `npm ci`.
@@ -31,7 +33,7 @@
 - Chưa có APK, signing, TestFlight, cloud deployment, GitHub remote hoặc GitHub Actions run.
 - Chưa kiểm tra native safe area, bàn phím, accessibility text scaling, GPS và xử lý quyền trên thiết bị.
 - Auth/database/Instagram/AI import/push/share và bản đồ nhúng chưa triển khai. Web quản trị mới là thư mục dành sẵn.
-- Theme và ảnh baseline là đề xuất ban đầu, cần nhóm chốt trước khi chia màn.
+- Tại thời điểm báo cáo này, theme/ảnh baseline còn là đề xuất. Quyết định mới hơn nằm trong design-system, không dùng câu này để mở lại hướng thiết kế.
 - Test bằng Node có thể in cảnh báo `MODULE_TYPELESS_PACKAGE_JSON` khi nạp các file TypeScript ESM của Expo; test vẫn đạt. Không đổi module configuration chỉ để che cảnh báo khi chưa kiểm tra lại Metro/tooling.
 - `npm audit` hiện báo 12 mục moderate, 0 high và 0 critical trong cây dependency Expo/CLI và lint. Một số đề xuất tự động yêu cầu đổi major/hạ Expo SDK; chưa áp `--force` để tránh phá tương thích. Đây không phải báo cáo không có lỗ hổng; rà lại advisory và bản vá tương thích khi cập nhật dependency.
 

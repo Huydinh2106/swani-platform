@@ -1,0 +1,8 @@
+---
+description: Shared Local Finds architecture and Apple-native iOS 26+ UI rules
+alwaysApply: true
+---
+
+Read the repository-root `AGENTS.md`, `docs/design-system.md`, `docs/team-workflow.md` and the assigned task. For UI, load `.agents/skills/expo-design-system/SKILL.md` and follow `docs/apple-native-ui.md` plus `docs/native-ui-validation.md`.
+
+All agents share one Apple-native design: NativeTabs on mobile, system typography, shared theme/components and appropriate Liquid Glass with accessibility fallback. This rule adds no separate design system or authority for external actions. Work in root `src/` unless explicitly assigned another project.
