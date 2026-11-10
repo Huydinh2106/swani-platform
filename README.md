@@ -1,6 +1,8 @@
-# Local Finds
+# SWANI
 
 Ứng dụng React Native + Expo khám phá local brand, dùng dữ liệu mẫu và bộ giao diện chung cho nhóm 5 người/5 AI. **Hướng thiết kế đã chốt: Apple-native, ưu tiên iOS 26+ và Liquid Glass.** Đây vẫn là starter có chức năng mẫu; auth, backend và các tích hợp chưa hoàn tất.
+
+Tên hiển thị chính thức là **SWANI**; package, Expo slug và URL scheme dùng `swani` (`swani://`). Dữ liệu đã lưu/theo dõi được chuyển sang khóa `swani:v1` khi app đọc lại dữ liệu cũ. Thay tên/scheme/icon trên bản cài standalone cần build lại; Expo Go và bundle export không xác nhận tên/icon trên màn hình chính của bản cài.
 
 ## Bắt đầu
 
@@ -17,7 +19,7 @@ Mở bằng Expo Go đúng SDK 58 hoặc development build tương thích. Dùng
 npm run web
 ```
 
-App chính nằm ở `src/` cạnh package.json gốc. `swan-platform/` là template riêng, không phải nơi thực hiện task Local Finds thông thường. Starter không cần `.env` hoặc database; `.env.example` chỉ để dành cho backend tương lai.
+App chính nằm ở `src/` cạnh package.json gốc. `swan-platform/` là template riêng, không phải nơi thực hiện task SWANI thông thường. Starter không cần `.env` hoặc database; `.env.example` chỉ để dành cho backend tương lai.
 
 ## Bộ chỉ dẫn dùng chung
 
@@ -31,7 +33,7 @@ App chính nằm ở `src/` cạnh package.json gốc. `swan-platform/` là temp
 | [Quy trình nhóm](docs/team-workflow.md)                                | Phạm vi, shared code và tích hợp 5 vai trò               |
 | [Hợp đồng dữ liệu](docs/backend-contract.md)                           | Hooks, repository, fixture hoặc backend                  |
 
-Codex đọc AGENTS/skill local; [Claude](CLAUDE.md), [Gemini](GEMINI.md), [Copilot](.github/copilot-instructions.md) và [Cursor](.cursor/rules/local-finds.mdc) có entry point trỏ về cùng bộ quy tắc. Nếu agent không tự nạp skill, đưa đường dẫn SKILL.md trong yêu cầu. Không duy trì một bộ thiết kế riêng cho từng công cụ.
+Codex đọc AGENTS/skill local; [Claude](CLAUDE.md), [Gemini](GEMINI.md), [Copilot](.github/copilot-instructions.md) và [Cursor](.cursor/rules/swani.mdc) có entry point trỏ về cùng bộ quy tắc. Nếu agent không tự nạp skill, đưa đường dẫn SKILL.md trong yêu cầu. Không duy trì một bộ thiết kế riêng cho từng công cụ.
 
 Task theo vai trò:
 

@@ -4,7 +4,7 @@ Quy trình này dùng cho UI, navigation, glass và animation; không yêu cầu
 
 ## Xác định app và mã đang chạy
 
-1. Kiểm tra cwd, `package.json`, app config và Metro để chắc đang chạy Local Finds ở root, không phải template `swan-platform/`.
+1. Kiểm tra cwd, `package.json`, app config và Metro để chắc đang chạy SWANI ở root, không phải template `swan-platform/`.
 2. Dùng Expo Go đúng SDK hoặc development build có native modules tương thích. Đọc phiên bản iOS và khả năng Liquid Glass; không suy ra chỉ từ model iPhone.
 3. Sau thay đổi navigator, platform entry hoặc cấu trúc native, chọn **Reload** trong menu Expo Go. Fast Refresh có thể giữ navigator cũ; đóng/mở lại màn không thay cho full reload. Nếu thay native modules/config build, dùng build tương thích mới.
 4. Xác nhận màn và bộ icon/tab hiện tại đã xuất hiện trước khi chụp bằng chứng. Không gọi ảnh cache cũ là kết quả code mới.

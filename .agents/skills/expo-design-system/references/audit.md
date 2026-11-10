@@ -1,4 +1,4 @@
-# Audit UI Local Finds
+# Audit UI SWANI
 
 Dùng khi cần kiểm tra drift giữa các màn hoặc task yêu cầu review. Theo [SKILL.md](../SKILL.md); audit-only thì báo finding, implementation task thì sửa phần được giao. Không tự redesign toàn app sau khi thấy một literal.
 

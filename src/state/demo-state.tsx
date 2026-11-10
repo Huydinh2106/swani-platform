@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { readSavedState, SAVED_STATE_STORAGE_KEY } from './saved-storage';
 import {
   createContext,
   useContext,
@@ -8,7 +9,6 @@ import {
   type PropsWithChildren,
 } from 'react';
 
-const STORAGE_KEY = 'localbrand-demo:v1';
 type SavedState = { savedIds: string[]; followedIds: string[] };
 type DemoState = SavedState & {
   hydrated: boolean;
@@ -37,7 +37,7 @@ export function DemoProvider({ children }: PropsWithChildren) {
   const writes = useRef(Promise.resolve());
   useEffect(() => {
     let active = true;
-    AsyncStorage.getItem(STORAGE_KEY)
+    readSavedState(AsyncStorage)
       .then((raw) => {
         if (active) setState(parseState(raw));
       })
@@ -54,7 +54,7 @@ export function DemoProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     if (!hydrated) return;
     writes.current = writes.current
-      .then(() => AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(state)))
+      .then(() => AsyncStorage.setItem(SAVED_STATE_STORAGE_KEY, JSON.stringify(state)))
       .catch(() => {
         setStorageError(true);
       });

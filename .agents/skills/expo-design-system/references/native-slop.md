@@ -1,6 +1,6 @@
 # Native Slop: Named Anti-Pattern Tells
 
-Local Finds note: follow the parent SKILL.md and root docs/design-system.md first. This generic upstream reference is a review aid; the declared green/ivory palette, light mode, existing domain artwork and web-only tab fallback are intentional. It does not authorize a redesign, external feedback or replacing shared components.
+SWANI note: follow the parent SKILL.md and root docs/design-system.md first. This generic upstream reference is a review aid; the declared green/ivory palette, light mode, existing domain artwork and web-only tab fallback are intentional. It does not authorize a redesign, external feedback or replacing shared components.
 
 Recurring mistakes in generated React Native apps, with names, observable tells, and preferred replacements. Use these as review prompts: explain what harms the task, readability, or platform behavior. A card, font, gradient, or onboarding flow is not a defect by itself; respect the user's brief and existing design system. Interaction failures such as obscured inputs or false-empty states still need fixing.
 

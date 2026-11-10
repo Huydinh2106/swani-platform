@@ -1,4 +1,4 @@
-# Local Finds — Gemini entry point
+# SWANI — Gemini entry point
 
 Use [AGENTS.md](AGENTS.md) as the shared agent instructions. Read [docs/design-system.md](docs/design-system.md), [docs/team-workflow.md](docs/team-workflow.md) and the assigned task. For UI, read [.agents/skills/expo-design-system/SKILL.md](.agents/skills/expo-design-system/SKILL.md).
 

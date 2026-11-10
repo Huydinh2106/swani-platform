@@ -1,6 +1,6 @@
 # Quy trình chung cho 5 người và 5 AI
 
-Tất cả cùng xây một app Local Finds theo [design system](design-system.md), [UI Apple](apple-native-ui.md) và [AGENTS.md](../AGENTS.md). Quyết định của chủ sản phẩm là nguồn ưu tiên; vai trò giúp tránh xung đột file, không chia thành năm hệ thiết kế.
+Tất cả cùng xây một app SWANI theo [design system](design-system.md), [UI Apple](apple-native-ui.md) và [AGENTS.md](../AGENTS.md). Quyết định của chủ sản phẩm là nguồn ưu tiên; vai trò giúp tránh xung đột file, không chia thành năm hệ thiết kế.
 
 ## Phạm vi
 

@@ -1,10 +1,10 @@
 ---
 name: expo-design-system
-description: Implement or review Local Finds UI using its shared theme, Apple-native controls, iOS 26+ Liquid Glass, system fonts and native verification. Use for screens, components, navigation, visual tokens or UI consistency in this repository; not for unrelated projects or backend-only work.
+description: Implement or review SWANI UI using its shared theme, Apple-native controls, iOS 26+ Liquid Glass, system fonts and native verification. Use for screens, components, navigation, visual tokens or UI consistency in this repository; not for unrelated projects or backend-only work.
 license: MIT
 ---
 
-# Local Finds — Apple-native design system
+# SWANI — Apple-native design system
 
 This is the project adaptation of Expo's design-system skill. Its job is to keep independent agents building one coherent app. It does not scaffold a replacement app or authorize publishing, cloud spending, external messages or database changes.
 
@@ -48,6 +48,6 @@ Do not turn this into an unsolicited redesign. Fix observable drift inside the t
 ## Optional reference material
 
 - [references/audit.md](references/audit.md): project audit checks, only for a requested/needed consistency audit. Adapt them to the actual theme; the local workflow above governs implementation.
-- [references/native-slop.md](references/native-slop.md): prompts for spotting generic generated UI. Treat them as review aids; Local Finds' declared palette/light mode is intentional.
+- [references/native-slop.md](references/native-slop.md): prompts for spotting generic generated UI. Treat them as review aids; SWANI's declared palette/light mode is intentional.
 
 Upstream origin and adaptation are recorded in [THIRD_PARTY_NOTICES.md](../../../THIRD_PARTY_NOTICES.md). Retain `LICENSE` when sharing this skill. No automatic feedback submission is authorized.

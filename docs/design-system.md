@@ -1,4 +1,4 @@
-# Local Finds — hệ giao diện chung
+# SWANI — hệ giao diện chung
 
 Định hướng đã chốt: **trải nghiệm native theo Apple, ưu tiên iOS 26+ và Liquid Glass**. Mọi AI dùng cùng quy tắc này. Phạm vi tài liệu là app ở `src/` của repository gốc; web quản trị và template con có runtime riêng.
 

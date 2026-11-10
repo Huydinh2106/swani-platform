@@ -43,7 +43,7 @@ export function ProfileScreen() {
         <AppText tone="muted">Theo dõi brand tại trang Khám phá hoặc Chi tiết sản phẩm.</AppText>
       ) : null}
       <AppText variant="caption" tone="muted">
-        LOCAL FINDS / Starter cho nhóm 5 người
+        SWANI / Starter cho nhóm 5 người
       </AppText>
     </Screen>
   );

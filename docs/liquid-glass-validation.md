@@ -1,6 +1,8 @@
 # Liquid Glass và font hệ thống
 
-Kiểm tra ngày 10/11/2026 cho app Local Finds ở thư mục gốc repository.
+Kiểm tra ngày 10/11/2026 cho app SWANI ở thư mục gốc repository.
+
+Tên trong phần mô tả đã được chuẩn hóa thành SWANI. Ảnh và kết quả bên dưới được giữ từ lần kiểm tra trước khi đổi tên; chúng không xác nhận giao diện/tên/icon mới.
 
 ## Cập nhật thanh tab native
 
@@ -23,7 +25,7 @@ Sau lần chuyển sang NativeTabs: `npm run check` và cả ba lệnh export we
 
 Ngày 10/11/2026, sau khi người dùng khởi động lại Mac, đã kết nối và thao tác trực tiếp qua iPhone Mirroring:
 
-- Mở Expo Go → app Local Finds, SDK 58.0.0.
+- Mở Expo Go → app SWANI, SDK 58.0.0.
 - Ban đầu màn hình vẫn hiển thị navigator cũ dù Metro đã có module NativeTabs mới. Dùng Reload trong menu Expo Go để tải lại toàn bộ app; sau reload thanh tab native với SF Symbols xuất hiện. Fast Refresh trước đó chưa thay navigator đang được giữ trên thiết bị.
 - Kéo trên thanh tab từ Khám phá → Đã lưu: màn hình Đã lưu xuất hiện và trái tim được chọn.
 - Kéo ngược từ Đã lưu → Khám phá: màn hình Khám phá xuất hiện và biểu tượng nhà được chọn.

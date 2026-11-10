@@ -38,7 +38,7 @@ export function HomeScreen() {
       </View>
       <View style={styles.intro}>
         <AppText variant="eyebrow" tone="primary">
-          LOCAL FINDS, YOUR STYLE
+          SWANI, YOUR STYLE
         </AppText>
         <AppText variant="display">Gu của bạn.{'\n'}Brand quanh bạn.</AppText>
         <AppText tone="muted">Khám phá những món đồ có cá tính riêng.</AppText>

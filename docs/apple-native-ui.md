@@ -1,6 +1,6 @@
 # Triển khai UI Apple và Liquid Glass
 
-Áp dụng cùng [hệ giao diện chung](design-system.md). Tài liệu mô tả lựa chọn triển khai cho Local Finds; không yêu cầu chuyển dự án sang Swift hay nâng minimum iOS. Baseline hiện tại: Expo SDK 58, React Native 0.88; luôn đọc lại `package.json` trước khi dùng API.
+Áp dụng cùng [hệ giao diện chung](design-system.md). Tài liệu mô tả lựa chọn triển khai cho SWANI; không yêu cầu chuyển dự án sang Swift hay nâng minimum iOS. Baseline hiện tại: Expo SDK 58, React Native 0.88; luôn đọc lại `package.json` trước khi dùng API.
 
 ## Chọn đúng API
 

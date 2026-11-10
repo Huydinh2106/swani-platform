@@ -1,4 +1,4 @@
-# Local Finds — Claude entry point
+# SWANI — Claude entry point
 
 Read [AGENTS.md](AGENTS.md), [docs/design-system.md](docs/design-system.md) and the assigned task in [docs/team-workflow.md](docs/team-workflow.md). For UI, load [.agents/skills/expo-design-system/SKILL.md](.agents/skills/expo-design-system/SKILL.md).
 

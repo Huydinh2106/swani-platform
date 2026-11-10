@@ -1,4 +1,4 @@
 interface:
-  display_name: 'Local Finds · Apple UI'
+  display_name: 'SWANI · Apple UI'
   short_description: 'Build consistent iOS 26+ UI with native Liquid Glass'
-  default_prompt: 'Use $expo-design-system to implement Local Finds UI with its shared theme, Apple-native controls, system typography, Liquid Glass and device verification.'
+  default_prompt: 'Use $expo-design-system to implement SWANI UI with its shared theme, Apple-native controls, system typography, Liquid Glass and device verification.'

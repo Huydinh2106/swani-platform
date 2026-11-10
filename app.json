@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Local Finds",
-    "slug": "localbrand-demo",
+    "name": "SWANI",
+    "slug": "swani",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "localbranddemo",
+    "scheme": "swani",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": false
