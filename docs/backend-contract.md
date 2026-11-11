@@ -1,8 +1,8 @@
 # Hợp đồng dữ liệu hiện tại
 
-Nguồn chuẩn là [src/contracts/catalog.ts](../src/contracts/catalog.ts); tài liệu này không tạo API hoặc backend mới. UI tuân thủ [design system](design-system.md) dù dữ liệu đến từ fixture hay backend.
+Nguồn chuẩn cho kiểu dữ liệu của app là [src/contracts/catalog.ts](../src/contracts/catalog.ts). UI tuân thủ [design system](design-system.md) với cả hai nguồn dữ liệu.
 
-Luồng: feature → [use-catalog](../src/hooks/use-catalog.ts) → [catalog repository](../src/services/catalog-repository.ts) → fixture hiện tại hoặc adapter được triển khai sau. Không gọi backend riêng từ card hoặc bypass hooks để vẽ màn.
+Luồng dữ liệu đi từ feature qua [use-catalog](../src/hooks/use-catalog.ts) và [catalog repository](../src/services/catalog-repository.ts) đến fixture hoặc [adapter Supabase](../src/services/supabase-catalog.ts). Adapter đọc view `catalog_products` và bảng `brands`, `stores` qua Data API khi đã cấu hình Project URL và khóa publishable. Hook dùng chung cache catalog và lọc trên dữ liệu đã tải để giữ tìm kiếm tiếng Việt không dấu.
 
 | Kiểu              | Nội dung                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------- |
@@ -12,6 +12,6 @@ Luồng: feature → [use-catalog](../src/hooks/use-catalog.ts) → [catalog rep
 | SearchFilters     | query, category, maxPriceVnd, sort featured/price-asc                                 |
 | CatalogRepository | listProducts, getProduct, listBrands, listStores — Promise                            |
 
-`getProduct` có thể trả undefined; hook hiện chuyển kết quả đó thành null. Các ID là string, quan hệ fixture phải khớp; không thay cấu trúc này trong task UI không liên quan. Saved/followed hiện thuộc state và AsyncStorage trên thiết bị, chưa có tài khoản hoặc đồng bộ server.
+`getProduct` trả `undefined` khi không tìm thấy. Hook chuyển kết quả đó thành `null`. ID là string. Seed Cloud dùng cùng ID với fixture. Saved/followed trên app vẫn dùng AsyncStorage. Backend đã có bảng tương ứng với RLS theo tài khoản Supabase Auth.
 
-Đổi schema/adapter cần nêu contract trước/sau, cập nhật hooks và caller, kiểm tra search/empty/error/missing product. Auth, GPS, bản đồ nhúng, Instagram/AI import chưa triển khai; không trình bày dữ liệu demo như kết quả tích hợp thật. Secret server không được đưa vào biến public hoặc client. Thực hiện backend/database chỉ khi được giao phạm vi cụ thể.
+Xem [hướng dẫn backend](../backend/README.md) để triển khai migration, seed và Edge Function. Các luồng đăng nhập app, GPS, bản đồ nhúng, Instagram và AI import chưa triển khai. Dữ liệu mẫu giữ nhãn demo. Secret server thuộc môi trường quản trị.

@@ -1,6 +1,6 @@
 # SWANI
 
-Ứng dụng React Native + Expo khám phá local brand, dùng dữ liệu mẫu và bộ giao diện chung cho nhóm 5 người/5 AI. **Hướng thiết kế đã chốt: Apple-native, ưu tiên iOS 26+ và Liquid Glass.** Đây vẫn là starter có chức năng mẫu; auth, backend và các tích hợp chưa hoàn tất.
+Ứng dụng React Native + Expo khám phá local brand, có catalog demo và backend Supabase. **Hướng thiết kế đã chốt: Apple-native, ưu tiên iOS 26+ và Liquid Glass.** Xem [hướng dẫn backend](backend/README.md) để cấu hình nguồn dữ liệu Cloud.
 
 Tên hiển thị chính thức là **SWANI**; package, Expo slug và URL scheme dùng `swani` (`swani://`). Dữ liệu đã lưu/theo dõi được chuyển sang khóa `swani:v1` khi app đọc lại dữ liệu cũ. Thay tên/scheme/icon trên bản cài standalone cần build lại; Expo Go và bundle export không xác nhận tên/icon trên màn hình chính của bản cài.
 
@@ -19,7 +19,7 @@ Mở bằng Expo Go đúng SDK 58 hoặc development build tương thích. Dùng
 npm run web
 ```
 
-App chính nằm ở `src/` cạnh package.json gốc. `swan-platform/` là template riêng, không phải nơi thực hiện task SWANI thông thường. Starter không cần `.env` hoặc database; `.env.example` chỉ để dành cho backend tương lai.
+App chính nằm ở `src/` cạnh package.json gốc. `swan-platform/` là template riêng. Mặc định app đọc fixture. Điền Project URL và khóa publishable theo [`.env.example`](.env.example) để đọc catalog Supabase.
 
 ## Bộ chỉ dẫn dùng chung
 
@@ -64,7 +64,8 @@ Sau khi đổi navigator, **Reload toàn bộ app trong Expo Go**; Fast Refresh 
 | Đã lưu/theo dõi                   | Lưu/bỏ lưu sản phẩm bằng AsyncStorage; trang đã lưu chưa có tab |
 | Cửa hàng                          | Danh sách, link tọa độ mẫu; chưa GPS/bản đồ nhúng               |
 | Cá nhân/brand/gallery             | Màn mẫu và đối chiếu shared components                          |
-| Auth/database/Instagram/AI import | Chưa tích hợp                                                   |
+| Backend                           | Supabase Postgres, Auth, Storage, Data API và Edge Function     |
+| Đăng nhập app/Instagram/AI import | Chưa tích hợp giao diện                                         |
 | Web quản trị                      | [Thư mục dành sẵn](brand-admin/README.md), chưa có app          |
 
 Brand/sản phẩm/địa điểm/minh họa đều là demo. Tọa độ ở Hà Nội không phải địa chỉ cửa hàng đã xác minh; chưa có tồn kho, giỏ hàng hay thanh toán.
@@ -86,7 +87,8 @@ src/fixtures/               dữ liệu mẫu
 docs/                       design, native QA, teamwork, tasks và bằng chứng
 .agents/skills/             skill dự án dùng chung
 scripts/, tests/            kiểm tra code và logic
-backend/, brand-admin/      phần dành cho tác vụ tương lai
+supabase/, backend/        migration, seed, Edge Function và hướng dẫn triển khai
+brand-admin/               thư mục dành cho web quản trị
 ```
 
 ## Kiểm tra và chạy native

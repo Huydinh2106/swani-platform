@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import type { SearchFilters } from '@/contracts/catalog';
+import { searchProducts } from '@/features/search/search-products';
 import { catalogRepository } from '@/services/catalog-repository';
 export function useProducts(filters: SearchFilters = {}) {
+  const brands = useBrands();
   return useQuery({
-    queryKey: ['catalog', 'products', filters],
-    queryFn: () => catalogRepository.listProducts(filters),
+    queryKey: ['catalog', 'products'],
+    queryFn: () => catalogRepository.listProducts(),
+    select: (products) => searchProducts(products, brands.data ?? [], filters),
   });
 }
 export function useProduct(id: string) {

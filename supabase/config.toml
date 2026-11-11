@@ -1,0 +1,41 @@
+# Supabase CLI configuration for local development.
+project_id = "swani-platform"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+auto_expose_new_tables = false
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[db.migrations]
+enabled = true
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+enabled = true
+site_url = "http://localhost:8081"
+
+[auth.email]
+enabled = true
+enable_confirmations = true
+
+[storage]
+enabled = true
+file_size_limit = "5MiB"
+
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+
+[functions.brand-admin]
+verify_jwt = true

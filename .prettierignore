@@ -1,6 +1,8 @@
 node_modules
 .expo
 .build
+supabase/.branches
+supabase/.temp
 .agents/skills
 package-lock.json
 assets
